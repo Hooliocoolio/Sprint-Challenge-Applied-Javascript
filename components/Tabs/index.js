@@ -7,3 +7,15 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+
+// CREATE TAB FUNCTION 
+function createTab(data) {
+    // ELEMENT VARIABLE
+    const tab = document.createElement('div');
+    // CREATE ELEMENT CLASS
+    tab.classList.add("tab")
+    // INPUT THE DATA
+    tab.textContent = data
+    // RETURN THE TAB ELEMENT
+    return tab
+}
