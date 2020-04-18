@@ -19,3 +19,19 @@ function createTab(data) {
     // RETURN THE TAB ELEMENT
     return tab
 }
+
+
+// CONNECT TO AXIOS FOR A GET REQUEST
+axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+    .then(res => {
+        //console.log(res.data.topics, 111111)
+        // VARIABLE FOR TOPICS ELEMENT
+        const topics = document.querySelector(".topics")
+        // LOOP THROUGH THE DATA
+        res.data.topics.forEach(elem => {
+            topics.appendChild(createTab(elem))
+        });
+        // CATCH ANY ERRORS
+    }).catch(err => {
+        console.log(err, 'you have failed')
+    })
