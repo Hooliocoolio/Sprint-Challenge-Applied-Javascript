@@ -24,7 +24,7 @@ function createTab(data) {
 // CONNECT TO AXIOS FOR A GET REQUEST
 axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
     .then(res => {
-        //console.log(res.data.topics, 111111)
+        // console.log(res.data.topics, 111111)
         // VARIABLE FOR TOPICS ELEMENT
         const topics = document.querySelector(".topics")
         // LOOP THROUGH THE DATA

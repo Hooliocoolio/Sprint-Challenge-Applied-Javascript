@@ -51,15 +51,18 @@ function cardCreator(data) {
     const image = document.createElement('img');
     const authName = document.createElement('span');
     const cardContainer = document.querySelector(".cards-container")
+
     // ELEMENT CLASSES
     card.classList.add('card');
     headline.classList.add('headline');
     author.classList.add('author');
     imageContainer.classList.add('img-container');
+
     // CONTENT
     headline.textContent = data.headline;
     authName.textContent = 'By ' + data.authorName;
     image.src = data.authorPhoto;
+
     // ELEMENTS LAYOUT
     cardContainer.appendChild(card);
     card.appendChild(headline);
@@ -67,6 +70,7 @@ function cardCreator(data) {
     author.appendChild(imageContainer);
     imageContainer.appendChild(image);
     author.appendChild(authName);
+
     // RETURN CARD
     return card;
 }

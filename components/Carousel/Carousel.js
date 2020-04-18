@@ -17,3 +17,55 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+
+// FUNCTION TO CREATE CAROUSEL COMPONENT
+
+function createCarousel() {
+  // ELEMENT VARIABLES
+
+  // DIV WITH 'carousel' CLASS
+
+  const carouselDiv = document.createElement('div');
+  carouselDiv.classList.add('carousel');
+
+
+  // DIV WITH 'left-button' CLASS and NESTED UNDER 'carousel'
+  const leftBtnDiv = document.createElement('div');
+  leftBtnDiv.classList.add('left-button');
+  carouselDiv.appendChild(leftBtnDiv);
+  // ARROW FOR THE LEFT BUTTON
+  leftBtnDiv.textContent = '<';
+
+  // IMG ELEMENTS/SOURCES/AND NESTED UNDER 'carousel'
+  const imgMountain = document.createElement('img');
+  carouselDiv.appendChild(imgMountain);
+  const imgComputer = document.createElement('img');
+  carouselDiv.appendChild(imgComputer);
+  const imgTrees = document.createElement('img');
+  carouselDiv.appendChild(imgTrees);
+  const imgTurntable = document.createElement('img');
+  carouselDiv.appendChild(imgTurntable);
+
+
+  // SRC
+  imgMountain.src = "./assets/carousel/mountains.jpeg";
+  imgComputer.src = "./assets/carousel/computer.jpeg";
+  imgTrees.src = "./assets/carousel/trees.jpeg";
+  imgTurntable.src = "./assets/carousel/turntable.jpeg";
+
+  // DIV W/'right-button' CLASS 
+  const rightBtnDiv = document.createElement('div');
+  rightBtnDiv.classList.add('right-button');
+  carouselDiv.appendChild(rightBtnDiv);
+  // ARROW FOR THE RIGHT BUTTON
+  rightBtnDiv.textContent = '>';
+
+
+  contain.append(carouselDiv);
+
+
+}
+
+
+console.log(createCarousel());

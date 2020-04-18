@@ -26,7 +26,7 @@ function header() {
     const spanDate = document.createElement('span');
     // ADDS THE CLASSNAME DATE TO THE SPAN
     spanDate.classList.add('date');
-    //NESTS THE SPAN ELEMENT WITHIN THE HEADER DIV
+    // NESTS THE SPAN ELEMENT WITHIN THE HEADER DIV
     divElement.appendChild(spanDate);
     // THIS WILL GIVE US DATE FOR OUR SPAN
     spanDate.textContent = 'APRIL 17, 2020';
@@ -41,7 +41,7 @@ function header() {
     const spanTemp = document.createElement('span');
     // ADDS THE CLASSNAME DATE TO THE SPAN
     spanTemp.classList.add('temp');
-    //NESTS THE SPAN ELEMENT WITHIN THE HEADER DIV
+    // NESTS THE SPAN ELEMENT WITHIN THE HEADER DIV
     divElement.appendChild(spanTemp);
     // THIS WILL GIVE US DATE FOR OUR SPAN
     spanTemp.textContent = '98º';
