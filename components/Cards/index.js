@@ -18,3 +18,59 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+// AXIOS GET REQUEST
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(result => {
+        //console.log(result);
+        // VARIABLE FOR THE ARTICLE 
+        const list = Object.keys(result.data.articles)
+        // LOOP THROUGHT THE DATA 
+        for (let i = 0; i < list.length; i++) {
+            // VARIABLE TO HOLD EACH OBJECT
+            const key = list[i];
+            // PRESENT THE RESULT
+            result.data.articles[`${key}`].forEach(element => {
+                cardCreator(element);
+            })
+        }
+        // CATCH ANY ERROR 
+    }).catch(error => {
+        console.log(error);
+    })
+
+
+// CREATE CARD FUNCTION 
+
+function cardCreator(data) {
+    // ELEMENT VARIABLES
+    const card = document.createElement('div')
+    const headline = document.createElement('div');
+    const author = document.createElement('div');
+    const imageContainer = document.createElement('div');
+    const image = document.createElement('img');
+    const authName = document.createElement('span');
+    const cardContainer = document.querySelector(".cards-container")
+
+    // ELEMENT CLASSES
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imageContainer.classList.add('img-container');
+
+    // CONTENT
+    headline.textContent = data.headline;
+    authName.textContent = 'By ' + data.authorName;
+    image.src = data.authorPhoto;
+
+    // ELEMENTS LAYOUT
+    cardContainer.appendChild(card);
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imageContainer);
+    imageContainer.appendChild(image);
+    author.appendChild(authName);
+
+    // RETURN CARD
+    return card;
+}
